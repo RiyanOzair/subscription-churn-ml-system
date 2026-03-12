@@ -1,0 +1,14 @@
+experiment:
+  name: churn_prediction
+metrics:
+- roc_auc
+- accuracy
+- precision
+- recall
+training:
+  random_state: 42
+  test_size: 0.2
+tuning:
+  cv: 3
+  enable: true
+  threshold: 0.8

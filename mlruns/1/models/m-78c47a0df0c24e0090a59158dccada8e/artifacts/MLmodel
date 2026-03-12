@@ -1,0 +1,23 @@
+artifact_path: file:C:/Users/farah/OneDrive/Desktop/subscription-churn-ml-system/mlruns/1/models/m-78c47a0df0c24e0090a59158dccada8e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.1
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.10.1
+model_id: m-78c47a0df0c24e0090a59158dccada8e
+model_size_bytes: 1061
+model_uuid: m-78c47a0df0c24e0090a59158dccada8e
+prompts: null
+run_id: 848b048582934c3fa6895af35b2bc24e
+utc_time_created: '2026-03-12 18:28:17.000971'

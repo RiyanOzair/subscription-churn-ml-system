@@ -11,5 +11,7 @@ pyyaml
 python-dotenv
 setuptools
 mlflow
-
+dill
+shap
+jinja2
 # -e .

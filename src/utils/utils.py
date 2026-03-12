@@ -1,6 +1,7 @@
 import os
 import sys
 import dill
+import yaml
 
 from sklearn.metrics import roc_auc_score
 
@@ -27,4 +28,9 @@ def load_object(file_path):
     except Exception as e:
         logging.error(f"Error loading object: {str(e)}")
         raise CustomException(e, sys)
-    
+
+
+def load_yaml(file_path):
+
+    with open(file_path, "r") as file:
+        return yaml.safe_load(file)
