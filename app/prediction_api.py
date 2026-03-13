@@ -10,7 +10,11 @@ from src.pipeline.prediction_pipeline import PredictionPipeline
 
 router = APIRouter()
 
-templates = Jinja2Templates(directory="templates")
+# Get the absolute path to the project root
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
+
+templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
 pipeline = PredictionPipeline()
 

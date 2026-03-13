@@ -17,15 +17,23 @@ PORT = int(os.getenv("PORT", 8000))
 LOG_LEVEL = os.getenv("LOG_LEVEL", "info")
 PYTHON_ENV = os.getenv("PYTHON_ENV", "development")
 
+# Get the absolute path to the project root
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
+STATIC_DIR = os.path.join(BASE_DIR, "static")
 
 app = FastAPI(
     title="Customer Churn Prediction API",
     version="1.0"
 )
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# Mount static files with absolute path
+if os.path.exists(STATIC_DIR):
+    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+else:
+    print(f"Warning: Static directory not found at {STATIC_DIR}")
 
 app.include_router(router)
 
