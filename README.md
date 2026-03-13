@@ -32,6 +32,8 @@ data/
     └── raw_loaded.csv
 ```
 
+
+
 ## Tech Stack
 
 ### Backend
@@ -108,6 +110,10 @@ subscription-churn-ml-system/
 ├── setup.py                      # Package setup
 └── fly.toml                      # Fly.io configuration
 ```
+
+### System Architecture Diagram
+
+![Architecture Diagram](artifacts/Architecture.png)
 
 ## Features
 
